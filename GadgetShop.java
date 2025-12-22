@@ -5,15 +5,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class GadgetShop extends JFrame implements ActionListener {
-
-    /* --------------------------------------------------------------
-     *  Data model for gadgets
-     * -------------------------------------------------------------- */
-    private ArrayList<Gadget> gadgets = new ArrayList<>();
-
-    /* --------------------------------------------------------------
-     *  UI components
-     * -------------------------------------------------------------- */
+    
+    // Data model for gadgets
+    // private ArrayList<Gadget> gadgets = new ArrayList<>();
+    
+    // UI components
     private JTextField modelField;
     private JTextField priceField;
     private JTextField weightField;
@@ -31,9 +27,8 @@ public class GadgetShop extends JFrame implements ActionListener {
     private static final Color BUTTON_BACKGROUND_COLOR = new Color(51, 51, 51); // Dark Grey
 
     public GadgetShop() {
-        /* --------------------------------------------------------------
-         *  Initialize UI components
-         * -------------------------------------------------------------- */
+
+        // Initialize UI components
         modelField = new JTextField();
         priceField = new JTextField();
         weightField = new JTextField();
@@ -44,9 +39,8 @@ public class GadgetShop extends JFrame implements ActionListener {
         durationField = new JTextField();
         downloadField = new JTextField();
 
-        /* --------------------------------------------------------------
-         *  Create buttons
-         * -------------------------------------------------------------- */
+        // Create buttons
+
         JButton addMobileButton   = createStyledButton("Add Mobile");
         JButton addMP3Button      = createStyledButton("Add MP3");
         JButton clearButton       = createStyledButton("Clear");
@@ -54,9 +48,8 @@ public class GadgetShop extends JFrame implements ActionListener {
         JButton makeCallButton    = createStyledButton("Make A Call");
         JButton downloadMusicButton = createStyledButton("Download Music");
 
-        /* --------------------------------------------------------------
-         *  Register this class as the listener for every button
-         * -------------------------------------------------------------- */
+         // Register this class as the listener for every button
+
         addMobileButton.addActionListener(this);
         addMP3Button.addActionListener(this);
         clearButton.addActionListener(this);
@@ -64,21 +57,19 @@ public class GadgetShop extends JFrame implements ActionListener {
         makeCallButton.addActionListener(this);
         downloadMusicButton.addActionListener(this);
 
-        /* --------------------------------------------------------------
-         *  Build a *master* panel that will hold everything
-         * -------------------------------------------------------------- */
+
+         // Build a *master* panel that will hold everything
+
         JPanel master = new JPanel(new BorderLayout(10, 10));
         master.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        /* --------------------------------------------------------------
-         *  Set dark theme colors
-         * -------------------------------------------------------------- */
+         // Set dark theme colors
+
         Color backgroundColor = new Color(32, 32, 32); // Dark background
         master.setBackground(backgroundColor);
 
-        /* --------------------------------------------------------------
-         *  Create the labels
-         * -------------------------------------------------------------- */
+         // Create the labels
+
         JLabel modelLabel      = createStyledLabel("Model:");
         JLabel priceLabel      = createStyledLabel("Price:");
         JLabel weightLabel     = createStyledLabel("Weight:");
@@ -89,9 +80,9 @@ public class GadgetShop extends JFrame implements ActionListener {
         JLabel durationLabel   = createStyledLabel("Duration (min):");
         JLabel downloadLabel   = createStyledLabel("Download Size (MB):");
 
-        /* --------------------------------------------------------------
-         *  Layout the components
-         * -------------------------------------------------------------- */
+
+         // Layout the components
+
         JPanel inputPanel = new JPanel(new GridLayout(0, 2, 15, 15));
         inputPanel.setBackground(backgroundColor);
 
@@ -126,9 +117,9 @@ public class GadgetShop extends JFrame implements ActionListener {
         master.add(inputPanel, BorderLayout.CENTER);
         master.add(buttonPanel, BorderLayout.SOUTH);
 
-        /* --------------------------------------------------------------
-         *  Set the frame properties
-         * -------------------------------------------------------------- */
+
+         // Set the frame properties
+
         setTitle("Gadget Shop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(master);
